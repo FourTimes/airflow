@@ -12,5 +12,12 @@ pipeline {
                 echo "steps"
          } 
       }
+            stage ('Test 3: Master') {
+        when { branch 'main' }
+        steps { 
+            echo 'I only execute on the master branch.' 
+        }
+    }
+
    }
 }
