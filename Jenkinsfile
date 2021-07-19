@@ -8,7 +8,9 @@ pipeline {
         stage('Build if branch master'){
             steps {
               script { 
-                if [ $(env.GIT_BRANCH) == "main" ] {
+                def gender = "${env.GIT_BRANCH}"
+
+                if gender == "main" ] {
                     echo "Building from ${env.GIT_BRANCH} Branch"
                 } else {
                     echo "Building from ${env.GIT_BRANCH} Branch"
