@@ -8,7 +8,7 @@ pipeline {
         stage('Build if branch master'){
             steps {
                 
-                if ${env.GIT_BRANCH} == "main" {
+                if $(env.GIT_BRANCH) == "main" {
                     echo "Building from ${env.GIT_BRANCH} Branch"
                 } else {
                     echo "Building from ${env.GIT_BRANCH} Branch"
