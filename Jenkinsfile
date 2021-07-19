@@ -10,15 +10,13 @@ pipeline {
               script { 
                 def gender = "${env.GIT_BRANCH}"
                 if (gender == "main") {
-                    echo "Building from ${gender} Branch"                   
+                        echo "Building from ${gender} Branch"                   
                    } else {
-                    echo "Building from ${gender} Branch"
-                    echo "none main branch"
-
+                        echo "Building from ${gender} Branch"
+                        echo "none main branch"
                    }
                 }
-
-        } 
+      } 
     }
-}
+  }
 }
