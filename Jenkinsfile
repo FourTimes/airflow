@@ -9,12 +9,12 @@ pipeline {
             steps {
                 script { 
                    def branch = "${env.GIT_BRANCH}" 
-                   if (branch == 'main') {
-                        echo "Building from ${branch} Branch"                   
-                      } else {
-                        echo "Building from ${branch} Branch"
-                        echo "none main branch"
-                      }
+                   if [ branch == 'main' ] 
+                   then 
+                      echo "Building from ${branch} Branch"                   
+                   else
+                        echo "Building from non ${branch} Branch"
+     
                 }
 
          } 
