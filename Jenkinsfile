@@ -1,23 +1,19 @@
 pipeline {
     agent any
+    environment {
+        FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
+        GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
+    }
     stages {
         stage('Build if branch master'){
-            when { 
-                    GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-                    return GIT_BRANCH == 'origin/master'
-                     } 
             steps {
-                echo "Building from Master Branch"
+                echo "Building from ${env.GIT_BRANCH} Branch"
             }
         }
 
         stage('Build if branch not master'){
-            when { 
-                    GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-                    return !(GIT_BRANCH == 'origin/master')
-                     } 
             steps {
-                echo "Building from ${GIT_BRANCH} Branch"
+                echo "Building from ${env.GIT_BRANCH} Branch"
             }
         }
 
