@@ -5,16 +5,15 @@ pipeline {
         GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
     }
     stages {
-      stage('Build if branch main') {   
+      stage('main') {   
            when { branch 'main' }
 
             steps {
-                echo "steps"
+                echo "main steps"
          } 
       }
-      stage('Build if branch main') {   
+      stage('dev') {   
            when { branch 'dev' }
-
             steps {
                 echo "dev steps"
          } 
