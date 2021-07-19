@@ -17,9 +17,9 @@ pipeline {
                    } else {
                         echo "Building from ${gender} Branch"
                         echo "none main branch"
-                   }
-                }
-      } 
-    }
-  }
+                 }
+             }
+         } 
+      }
+   }
 }
