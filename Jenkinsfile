@@ -6,11 +6,11 @@ pipeline {
     }
     stages {
         stage('Build if branch master'){
-            when {
-                  expression {
-                     return env.GIT_BRANCH == 'main';
-                  }             
-              }
+//             when {
+//                   expression {
+//                      return env.GIT_BRANCH == 'main';
+//                   }             
+//               }
             
             steps {
 
