@@ -9,8 +9,10 @@ pipeline {
             steps {
               script { 
                 def gender = "${env.GIT_BRANCH}"
-                if (gender == "origin/main") {
+                if (gender == "main") {
                     echo "Building from ${gender} Branch"
+                    echo "main branch"
+                    
                    } else {
                     echo "Building from ${gender} Branch"
                    }
