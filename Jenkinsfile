@@ -7,16 +7,12 @@ pipeline {
     stages {
         stage('Build if branch master'){
             steps {
-                echo "Building from ${env.GIT_BRANCH} Branch"
-            }
-        }
-
-        stage('Build if branch not master'){
-            steps {
-                echo "Building from ${env.GIT_BRANCH} Branch"
-            }
-        }
-
-      
-        }
+                
+                if ${env.GIT_BRANCH} == "main" {
+                    echo "Building from ${env.GIT_BRANCH} Branch"
+                } else {
+                    echo "Building from ${env.GIT_BRANCH} Branch"
+                }
+        } 
+    }
 }
