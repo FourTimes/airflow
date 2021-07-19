@@ -14,10 +14,10 @@ pipeline {
             
             steps {
 
-                
+                                  echo "main"
               script { 
                 def gender = "${env.GIT_BRANCH}"
-                  echo "main"
+
 //                 if (gender == 'main') {
 //                         echo "Building from ${gender} Branch"                   
 //                    } else {
