@@ -14,8 +14,9 @@ pipeline {
             
             steps {
 
-                def branch = "${env.GIT_BRANCH}" 
+
                 script { 
+                   def branch = "${env.GIT_BRANCH}" 
                    if (branch == 'main') {
                         echo "Building from ${branch} Branch"                   
                       } else {
