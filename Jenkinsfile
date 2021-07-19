@@ -6,15 +6,24 @@ pipeline {
     }
     stages {
         stage('Build if branch master'){
+            when {
+                  expression {
+                     return env.GIT_BRANCH == 'main';
+                  }             
+              }
+            
             steps {
+
+                
               script { 
                 def gender = "${env.GIT_BRANCH}"
-                if (gender == 'main') {
-                        echo "Building from ${gender} Branch"                   
-                   } else {
-                        echo "Building from ${gender} Branch"
-                        echo "none main branch"
-                 }
+                  echo "main"
+//                 if (gender == 'main') {
+//                         echo "Building from ${gender} Branch"                   
+//                    } else {
+//                         echo "Building from ${gender} Branch"
+//                         echo "none main branch"
+//                  }
              }
          } 
       }
