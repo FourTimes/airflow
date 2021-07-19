@@ -6,7 +6,7 @@ pipeline {
     }
     stages {
         stage('Build if branch main'){   
-//            when { expression { env.GIT_BRANCH == 'main' } }
+           when { branch 'main'}
 
             steps {
                 echo "steps"
