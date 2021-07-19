@@ -5,16 +5,8 @@ pipeline {
         GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
     }
     stages {
-        stage('Build if branch master'){
-//             when {
-//                   expression {
-//                      return env.GIT_BRANCH == 'main';
-//                   }             
-//               }
-            
+        stage('Build if branch master'){         
             steps {
-
-
                 script { 
                    def branch = "${env.GIT_BRANCH}" 
                    if (branch == 'main') {
