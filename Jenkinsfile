@@ -15,13 +15,15 @@ pipeline {
             steps {
 
                 def branch = "${env.GIT_BRANCH}" 
-
-                if (branch == 'main') {
+                script { 
+                   if (branch == 'main') {
                         echo "Building from ${branch} Branch"                   
-                   } else {
+                      } else {
                         echo "Building from ${branch} Branch"
                         echo "none main branch"
-                 }
+                      }
+                }
+
          } 
       }
    }
