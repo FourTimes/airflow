@@ -6,18 +6,11 @@ pipeline {
     }
     stages {
         stage('Build if branch main'){   
-           when { expression { env.GIT_BRANCH == 'main' } }
+//            when { expression { env.GIT_BRANCH == 'main' } }
 
             steps {
                 echo "steps"
          } 
       }
-            stage ('Test 3: Master') {
-        when { branch 'main' }
-        steps { 
-            echo 'I only execute on the master branch.' 
-        }
-    }
-
    }
 }
